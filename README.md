@@ -43,6 +43,10 @@ I'm doing the TensorFlow version of the project:
 
 The work happens in [`notebooks/recognition_logic.ipynb`](digits-recognition/notebooks/recognition_logic.ipynb).
 
+### [`hotdog-not-hotdog/`](hotdog-not-hotdog/): hotdog / not hotdog (in progress)
+
+Look at a photo and say whether it's a hotdog, like the app from Silicon Valley. It's a CNN trained from scratch in Keras on about 4,300 photos, with augmentation and early stopping. It currently reaches about 84 % validation accuracy. See its [README](hotdog-not-hotdog/README.md) for the experiments so far and what's next.
+
 ### Earlier: house price prediction
 
 My first project (Phase 2) predicted California district house prices with linear regression written in NumPy and compared it with scikit-learn. It was a throwaway learning exercise, so it isn't kept in this repo.
@@ -57,4 +61,4 @@ uv sync
 uv run jupyter lab
 ```
 
-The datasets download automatically the first time they're used (`keras.datasets.mnist.load_data()`), so `data/` isn't committed.
+The MNIST digits download automatically the first time they're used (`keras.datasets.mnist.load_data()`). The hotdog photos have to be cloned into `hotdog-not-hotdog/data/` first, as its README explains. Either way, `data/` isn't committed.
