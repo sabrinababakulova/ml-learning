@@ -45,7 +45,7 @@ The work happens in [`notebooks/recognition_logic.ipynb`](digits-recognition/not
 
 ### [`hotdog-not-hotdog/`](hotdog-not-hotdog/): hotdog / not hotdog (in progress)
 
-Look at a photo and say whether it's a hotdog, like the app from Silicon Valley. It's a CNN trained from scratch in Keras on about 4,300 photos, with augmentation and early stopping. It currently reaches about 84 % validation accuracy. See its [README](hotdog-not-hotdog/README.md) for the experiments so far and what's next.
+Look at a photo and say whether it's a hotdog, like the app from Silicon Valley. It's a CNN trained from scratch in Keras on about 4,300 photos, with BatchNorm, early stopping and a learning rate that drops when progress stalls. It currently reaches about 94 % validation accuracy. The best model of each run is saved to its own file, and `predict.py` reuses it to classify new photos without retraining. See its [README](hotdog-not-hotdog/README.md) for the experiments so far and what's next.
 
 ### Earlier: house price prediction
 
