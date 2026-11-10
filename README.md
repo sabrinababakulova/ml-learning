@@ -47,6 +47,10 @@ The work happens in [`notebooks/recognition_logic.ipynb`](digits-recognition/not
 
 Look at a photo and say whether it's a hotdog, like the app from Silicon Valley. It's a CNN trained from scratch in Keras on about 4,300 photos, with BatchNorm, early stopping and a learning rate that drops when progress stalls. It currently reaches about 94 % validation accuracy. The best model of each run is saved to its own file, and `predict.py` reuses it to classify new photos without retraining. See its [README](hotdog-not-hotdog/README.md) for the experiments so far and what's next.
 
+### [`name-generator/`](name-generator/): a character-level name generator (in progress)
+
+Read 32,000 real first names and invent new ones that sound real, one letter at a time. It's my first PyTorch project and covers Phase 4. It starts with a bigram model built by counting letter pairs (loss 2.45), rebuilds that same model as a neural network, then moves to an MLP that sees the last 3 letters through learned embeddings (validation loss 2.11). The MLP is written twice: once by hand with raw tensors, and once with `nn.Module`, `DataLoader` and Adam. See its [README](name-generator/README.md) for the details and results.
+
 ### Earlier: house price prediction
 
 My first project (Phase 2) predicted California district house prices with linear regression written in NumPy and compared it with scikit-learn. It was a throwaway learning exercise, so it isn't kept in this repo.
@@ -61,4 +65,4 @@ uv sync
 uv run jupyter lab
 ```
 
-The MNIST digits download automatically the first time they're used (`keras.datasets.mnist.load_data()`). The hotdog photos have to be cloned into `hotdog-not-hotdog/data/` first, as its README explains. Either way, `data/` isn't committed.
+The MNIST digits download automatically the first time they're used (`keras.datasets.mnist.load_data()`). The hotdog photos have to be cloned into `hotdog-not-hotdog/data/` first, and the names list downloaded into `name-generator/data/`, as their READMEs explain. Either way, `data/` isn't committed.

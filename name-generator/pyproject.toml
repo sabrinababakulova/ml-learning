@@ -1,0 +1,9 @@
+[project]
+name = "name-generator"
+version = "0.1.0"
+description = "Character-level name generator: a bigram model, then an MLP language model in PyTorch"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.15.0",
+]
